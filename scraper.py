@@ -258,10 +258,42 @@ def get_iphone_coustoms_posts(model):
         if widget.get('widget_type') == 'POST_ROW':
             title = widget['data'].get('title')
             price = widget['data'].get('middle_description_text')
+            date = widget["data"].get("bottom_description_text")
+
+            if not date:
+                red_text = widget["data"].get("red_text", "")
+
+                emoji = {
+                    "نردبان شده": "🪜",
+                    "پله شده": "⚡",
+                    "نردبان شده | فروشگاه": "⭐"
+                }
+
+                date = f"{emoji.get(red_text, '')} {red_text}".strip()
+
+            token = (
+                widget["data"]
+                .get("action", {})
+                .get("payload", {})
+                .get("token")
+            )
+
+            city = (
+                widget["data"]
+                .get("action", {})
+                .get("payload", {})
+                .get("web_info", {})
+                .get("city_persian")
+            )
+
 
             posts.append({
                 "title": title,
-                "price": price
+                "price": price,
+                "date": date,
+                "city": city,
+                "token": token,
+                "link": f"https://divar.ir/v/{token}"
             })
     return posts
 
