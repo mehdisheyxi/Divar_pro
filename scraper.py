@@ -123,10 +123,10 @@ def get_iphone():
     }
 
 
-def get_iphone_coustoms(model):
+def get_iphone_coustoms(model, city_id):
     payload = {
 
-        "city_ids": ["10"],
+        "city_ids": [city_id],
 
         "source_view": "FILTER",
 
@@ -247,8 +247,8 @@ def get_iphone_posts():
     return posts
 
 
-def get_iphone_coustoms_posts(model):
-    data = get_iphone_coustoms(model)
+def get_iphone_coustoms_posts(model, city_id):
+    data = get_iphone_coustoms(model, city_id)
     print(data['status'])
 
     posts = []
