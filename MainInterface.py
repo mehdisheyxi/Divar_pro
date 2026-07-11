@@ -11,6 +11,7 @@ from PyQt5.QtWidgets import QTableWidgetItem
 import webbrowser
 from PyQt5.QtWidgets import QMenu
 from PyQt5.QtGui import QCursor
+from cities import CITY_IDS
 
 
 def resource_path(relative_path):
@@ -79,15 +80,16 @@ class MainWindow(QMainWindow):
         return int(numbers)
 
     def get_posts(self):
-        city = self.comboBox_city.currentText()
+        city_name = self.comboBox_city.currentText()
+        city_id = CITY_IDS.get(city_name)
+
         brand = self.comboBox_Brand.currentText()
         model = self.comboBox_Model.currentText()
 
-        print(city)
-        print(brand)
-        print(model)
+        print(city_name)
+        print(city_id)
 
-        self.posts = get_iphone_coustoms_posts(model)
+        self.posts = get_iphone_coustoms_posts(model, city_id)
 
         # پاک کردن اطلاعات قبلی
         self.tablePosts.clearContents()
