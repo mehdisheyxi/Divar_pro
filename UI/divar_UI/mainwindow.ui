@@ -30,7 +30,47 @@
         <widget class="QComboBox" name="comboBox_city">
          <item>
           <property name="text">
-           <string>Urmia</string>
+           <string>کل ایران</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>تهران</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>استان تهران</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>تبریز</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>استان آذربایجان شرقی</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ارومیه</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>استان آذربایجان غربی</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>شیراز</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>استان فارس</string>
           </property>
          </item>
         </widget>
